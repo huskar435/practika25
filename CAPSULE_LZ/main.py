@@ -1,7 +1,8 @@
-from schedule_statistic import GraphicalStatistics
+from statika import PaymentStatistics
 
-# Путь к файлу с данными
-file_path = "personal_transactions.csv"  
-stats = GraphicalStatistics(file_path)
+file_path = "personal_transactions.csv"
+
+stats = PaymentStatistics(file_path)
+
 print(stats.load_data())
-print(stats.plot_pie_chart())
+stats.plot_payment_system_pie()
