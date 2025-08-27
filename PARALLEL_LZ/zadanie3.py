@@ -1,10 +1,12 @@
 import asyncio
 import random
 
+
 async def reading_simulation(file):
     processing_time = random.uniform(0.1, 5.0)
     await asyncio.sleep(processing_time)
     print(f"'{file}' обработан за {processing_time:.2f} сек")
+
 
 async def reading_parallel():
     total_documents = 10
@@ -12,4 +14,9 @@ async def reading_parallel():
     await asyncio.gather(*reading_tasks)
 
 
-asyncio.run(reading_parallel())
+def main():
+    asyncio.run(reading_parallel())
+
+
+if __name__ == "__main__":
+    main()
